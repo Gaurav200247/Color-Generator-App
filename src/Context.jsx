@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
   const [RandomShow, setRandomShow] = useState(false);
   const [Favoutites, setFavoutites] = useState(getLocalStorage);
 
-  const [Text, setText] = useState("Add");
+  const [Text, setText] = useState("Add to Favourites");
   const [change, setchange] = useState(false);
 
   const [ShowFav, setShowFav] = useState(false);

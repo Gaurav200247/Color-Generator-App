@@ -37,10 +37,10 @@ const SinglePallete = ({ rgb, type }) => {
       } `}
     >
       <button
-        className="add-btn text-3xl h-12 cursor-pointer"
+        className="add-btn text-2xl h-12 cursor-pointer"
         onClick={(e) => AddToFavourites(e, `rgb(${bcg})`)}
       >
-        Add
+        Add To Favourites
       </button>
 
       <div className="color-info-container  flex flex-col justify-around items-center mt-3 ">
@@ -122,10 +122,10 @@ const RandomSinglePallete = (item) => {
        `}
     >
       <button
-        className="add-btn text-3xl h-12 cursor-pointer"
+        className="add-btn text-2xl h-12 cursor-pointer"
         onClick={(e) => AddToFavourites(e, item.item)}
       >
-        Add
+        Add To Favourites{" "}
       </button>
 
       {ColorData && (
