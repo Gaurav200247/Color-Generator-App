@@ -1,0 +1,16 @@
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 50%;
+  border: 3px solid yellowgreen;
+  border-top-color: lightseagreen;
+  animation: spinner 0.5s linear infinite;
+}

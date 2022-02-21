@@ -1,13 +1,170 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ******************************************************************** */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(44, 44, 44);
+}
+/* ******************************************************************** */
+.FavModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(105, 105, 105, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transform: scale(0);
+  transition: 0.4s;
+  overflow: scroll;
+}
+.showFav {
+  transform: scale(1);
+}
+.fav-colors-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.SingleFavBlock {
+  position: relative;
+  padding: 10px;
+  height: 150px;
+  width: 190px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.delete-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 25px;
+  color: rgb(104, 26, 42);
+  cursor: pointer;
+}
+.SingleFavBlock:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.cross-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: red;
+  width: 100%;
+}
+.fav-block-links {
+  transition: 0.3s;
+}
+.fav-block-links:hover {
+  transform: scale(1.02);
+  font-size: 20px;
+}
+/* ******************************************************************** */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(34, 35, 39);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(100, 102, 104);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(84, 85, 87);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ******************************************************************** */
+.PalleteContainer {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem 0.75rem 1.25rem 0.75rem;
+}
+/* ******************************************************************** */
+.single-pallete {
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.single-pallete:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* ******************************************************************** */
+.color-info-container {
+  height: 70%;
+}
+/* ******************************************************************** */
+.singlepallete-links {
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 10px;
+  padding: 4px;
+  font-weight: 600;
+}
+.singlepallete-links:hover {
+  transform: scale(1.02);
+  font-size: 20px;
+}
+.add-btn {
+  margin-top: 30px;
+  width: 90%;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.4s;
+  /* border: 1px solid gray; */
+}
+.add-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* ******************************************************************** */
+@media only screen and (max-width: 800px) {
+  .PalleteContainer {
+    height: 30vh;
+  }
+  .single-pallete {
+    width: 100%;
+    flex-direction: row;
+    padding-left: 30px;
+  }
+  .color-info-container {
+    margin: 0;
+    height: 100%;
+    width: 50%;
+    margin: 10px;
+    justify-content: center;
+  }
+  .singlepallete-links {
+    margin-bottom: 0px;
+    padding: 2px;
+  }
+
+  .form-container {
+    display: none;
+  }
 }
